@@ -1,0 +1,87 @@
+.font-lobster {
+    font-family: 'Lobster', cursive;
+    letter-spacing: 2px;
+}
+
+.parent {
+    padding-right: 8%;
+    padding-left: 8%;
+}
+
+@media only screen and (max-width: 600px) {
+    .parent {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+}
+
+
+.visible {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 40;
+    height: 4rem;
+    transition: 0.3s linear;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+}
+
+/* Add this to your CSS */
+.flipIn{
+    position: absolute;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+.shrinkAndMoveCenter {
+    position: absolute;
+    animation: shrinkAndMoveCenter 0.5s ease-in-out forwards;
+}
+.moveUp{
+    position: absolute;
+    animation: moveUp 0.5s ease-in-out forwards;
+}
+
+@keyframes flipIn {
+    0% {
+        transform: perspective(400px) rotateY(90deg) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: perspective(400px) rotateY(0deg) scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: perspective(400px) rotateY(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+}
+
+@keyframes shrinkAndMoveCenter {
+    0% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes expandAndMoveToPlace {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
